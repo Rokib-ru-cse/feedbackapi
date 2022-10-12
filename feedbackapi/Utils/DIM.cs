@@ -1,5 +1,7 @@
-﻿using feedbackapi.DAL.DbSeed.CitySeed;
+﻿using feedbackapi.DAL.DbSeed.CategorySeed;
+using feedbackapi.DAL.DbSeed.CitySeed;
 using feedbackapi.DAL.DbSeed.CountrySeed;
+using feedbackapi.DAL.DbSeed.SubCategorySeed;
 
 namespace feedbackapi.Utils
 {
@@ -14,6 +16,8 @@ namespace feedbackapi.Utils
             builder.Services.AddScoped<Seed>();
             builder.Services.AddScoped<CountryDbInitializer>();
             builder.Services.AddScoped<CityDbInitializer>();
+            builder.Services.AddScoped<CategoryDbInitializer>();
+            builder.Services.AddScoped<SubCategoryDbInitializer>();
 
         }
     }

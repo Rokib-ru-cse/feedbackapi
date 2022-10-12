@@ -20,6 +20,7 @@ internal class Program
         });
         DIM.DependencyInjection(builder);
 
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
