@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using feedbackapi.DAL;
 
@@ -10,9 +11,10 @@ using feedbackapi.DAL;
 namespace feedbackapi.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221012181312_rating")]
+    partial class rating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,10 +83,6 @@ namespace feedbackapi.DAL.Migrations
 
                     b.Property<int>("FeedbackId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
@@ -156,28 +154,6 @@ namespace feedbackapi.DAL.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Feedbacks");
-                });
-
-            modelBuilder.Entity("feedbackapi.Model.EntityModels.FeedbackImage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("FeedbackId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FeedbackId");
-
-                    b.ToTable("FeedbackImages");
                 });
 
             modelBuilder.Entity("feedbackapi.Model.EntityModels.Provider", b =>
@@ -366,17 +342,6 @@ namespace feedbackapi.DAL.Migrations
                     b.Navigation("SubCategory");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("feedbackapi.Model.EntityModels.FeedbackImage", b =>
-                {
-                    b.HasOne("feedbackapi.Model.EntityModels.Feedback", "Feedback")
-                        .WithMany()
-                        .HasForeignKey("FeedbackId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Feedback");
                 });
 
             modelBuilder.Entity("feedbackapi.Model.EntityModels.Provider", b =>

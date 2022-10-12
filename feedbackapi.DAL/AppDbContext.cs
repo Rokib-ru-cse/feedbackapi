@@ -13,6 +13,12 @@ namespace feedbackapi.DAL
         public DbSet<City> Cities { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Provider> Providers { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<FeedbackImage> FeedbackImages { get; set; }
 
 
 
