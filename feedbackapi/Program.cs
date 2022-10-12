@@ -1,4 +1,5 @@
 using feedbackapi.DAL;
+using feedbackapi.Utils;
 using Microsoft.EntityFrameworkCore;
 
 internal class Program
@@ -12,18 +13,12 @@ internal class Program
         ConfigurationManager configuration = builder.Configuration;
         var connectionString = configuration.GetConnectionString("DefaultConnectionString");
 
-        var serverVersion = new MySqlServerVersion(new Version(8, 0, 0));
+        var serverVersion = new MySqlServerVersion(new Version(8, 0, 3));
         builder.Services.AddDbContext<AppDbContext>(options =>
         {
             options.UseMySql(connectionString, serverVersion);
         });
-
-
-
-        builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        DIM.DependencyInjection(builder);
 
         var app = builder.Build();
 
@@ -33,6 +28,7 @@ internal class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+        app.Services.GetRequiredService<Seed>().SeedData();
 
         app.UseHttpsRedirection();
 

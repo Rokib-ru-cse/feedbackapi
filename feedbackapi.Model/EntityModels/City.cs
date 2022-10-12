@@ -7,6 +7,7 @@
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public Country Country { get; set; }
+        public int CountryId { get; set; }
 
     }
 }

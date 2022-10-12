@@ -11,8 +11,8 @@ using feedbackapi.DAL;
 namespace feedbackapi.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221011184507_city")]
-    partial class city
+    [Migration("20221012163946_countryCity")]
+    partial class countryCity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
