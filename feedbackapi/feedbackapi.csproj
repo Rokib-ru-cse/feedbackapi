@@ -18,10 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\feedbackapi.BLL\feedbackapi.BLL.csproj" />
     <ProjectReference Include="..\feedbackapi.DAL\feedbackapi.DAL.csproj" />
   </ItemGroup>
 

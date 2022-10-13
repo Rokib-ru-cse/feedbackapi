@@ -5,9 +5,11 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "feedbackapi", "feedbackapi\feedbackapi.csproj", "{ED595F54-4327-4348-90B6-679AF610597D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "feedbackapi.Model", "feedbackapi.Model\feedbackapi.Model.csproj", "{8BA30433-B61A-41CD-A876-22CF1DA4A89E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "feedbackapi.Model", "feedbackapi.Model\feedbackapi.Model.csproj", "{8BA30433-B61A-41CD-A876-22CF1DA4A89E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "feedbackapi.DAL", "feedbackapi.DAL\feedbackapi.DAL.csproj", "{074B452B-1253-4381-BC91-262952C70DA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "feedbackapi.DAL", "feedbackapi.DAL\feedbackapi.DAL.csproj", "{074B452B-1253-4381-BC91-262952C70DA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "feedbackapi.BLL", "feedbackapi.BLL\feedbackapi.BLL.csproj", "{EBCF932C-1111-4440-BDFB-1734AA26A792}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{074B452B-1253-4381-BC91-262952C70DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{074B452B-1253-4381-BC91-262952C70DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{074B452B-1253-4381-BC91-262952C70DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBCF932C-1111-4440-BDFB-1734AA26A792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBCF932C-1111-4440-BDFB-1734AA26A792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBCF932C-1111-4440-BDFB-1734AA26A792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBCF932C-1111-4440-BDFB-1734AA26A792}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
