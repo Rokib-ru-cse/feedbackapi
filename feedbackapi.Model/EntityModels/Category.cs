@@ -1,4 +1,6 @@
-﻿namespace feedbackapi.Model.EntityModels
+﻿using feedbackapi.Model.IdentityModels;
+
+namespace feedbackapi.Model.EntityModels
 {
     public class Category
     {
@@ -6,6 +8,7 @@
         public string Name { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-
+        public ApplicationUser? UpdatedBy { get; set; }
+        public string? UpdatedById { get; set; }
     }
 }
