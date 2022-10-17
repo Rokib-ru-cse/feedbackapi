@@ -25,10 +25,12 @@ internal class Program
             options.UseMySql(connectionString, serverVersion);
         });
 
-        builder.Services.AddDbContext<IdentityContext>(options =>
-        {
-            options.UseMySql(connectionString, serverVersion);
-        });
+
+// builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+//      .AddEntityFrameworkStores<AppDbContext>()
+//      .AddUserManager<CustomUserManager<ApplicationUser>>()
+//      .AddDefaultTokenProviders();
+
 
         builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
         {
@@ -39,8 +41,7 @@ internal class Program
             options.Password.RequireNonAlphanumeric = false;
             options.User.RequireUniqueEmail = true;
 
-
-        }).AddEntityFrameworkStores<IdentityContext>()
+        }).AddEntityFrameworkStores<AppDbContext>()
         .AddUserManager<CustomUserManager<ApplicationUser>>()
         .AddDefaultTokenProviders();
 
