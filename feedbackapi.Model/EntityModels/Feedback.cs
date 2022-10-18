@@ -15,7 +15,7 @@ namespace feedbackapi.Model.EntityModels
         public DateTime UpdatedAt { get; set; }
         public ApplicationUser CreatedBy { get; set; }
         public string CreatedById { get; set; }
-        public ApplicationUser UpdatedBy { get; set; }
+        public ApplicationUser? UpdatedBy { get; set; }
         public string? UpdatedById { get; set; }
         public Provider Provider { get; set; }
         public int ProviderId { get; set; }

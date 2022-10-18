@@ -12,6 +12,7 @@ namespace feedbackapi.Controllers
 
         public Category(ICategoryBLRepository categoryBLRepository)
         {
+            
             this.categoryBLRepository = categoryBLRepository;
         }
 
@@ -37,6 +38,7 @@ namespace feedbackapi.Controllers
         {
             try
             {
+                
                 return Ok(categoryBLRepository.Category(categoryId));
             }
             catch (Exception ex)

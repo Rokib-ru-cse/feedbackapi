@@ -12,14 +12,16 @@ namespace feedbackapi.DAL
         }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<SubCategory> SubCategories { get; set; }
-        public DbSet<Feedback> Feedbacks { get; set; }
-        public DbSet<Provider> Providers { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<FeedbackImage> FeedbackImages { get; set; }
-
-
+        public DbSet<Follow> Follows { get; set; }
+        public DbSet<Like> Likes { get; set; }
+        public DbSet<Provider> Providers { get; set; }
+        public DbSet<ReportRequest> ReportRequests { get; set; }
+        public DbSet<ReportResponse> ReportResponses { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<WishList> WishLists { get; set; }
 
     }
 }
