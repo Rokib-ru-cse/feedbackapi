@@ -58,5 +58,80 @@ namespace feedbackapi.BLL.Service
                 };
             }
         }
+
+        public ReturnResultWithClass<Category> DeleteCategory(int categoryId)
+        {
+            try
+            {
+                context.Categories.Remove(context.Categories.Single(c=>c.Id==categoryId));
+                context.SaveChanges();
+                return new ReturnResultWithClass<Category>()
+                {
+                    Success = true,
+                    Message = "Category saved successfully",
+                    Value = new Category()
+                };
+            }
+            catch (Exception ex)
+            {
+                
+                return new ReturnResultWithClass<Category>()
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Value = new Category()
+                };
+            }
+        }
+
+        public ReturnResultWithClass<Category> SaveCategory(Category category)
+        {
+            try
+            {
+                context.Categories.Add(category);
+                context.SaveChanges();
+                return new ReturnResultWithClass<Category>()
+                {
+                    Success = true,
+                    Message = "Category saved successfully",
+                    Value = category
+                };
+            }
+            catch (Exception ex)
+            {
+                
+                return new ReturnResultWithClass<Category>()
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Value = new Category()
+                };
+            }
+        }
+
+        public ReturnResultWithClass<Category> UpdateCategory(Category category)
+        {
+            try
+            {
+                context.Categories.Update(category);
+                context.SaveChanges();
+                return new ReturnResultWithClass<Category>()
+                {
+                    Success = true,
+                    Message = "Category updated successfully",
+                    Value = category
+                };
+            }
+            catch (Exception ex)
+            {
+                
+                return new ReturnResultWithClass<Category>()
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Value = new Category()
+                };
+            }
+        }
     }
 }

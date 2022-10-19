@@ -38,8 +38,61 @@ namespace feedbackapi.Controllers
         {
             try
             {
-                
                 return Ok(categoryBLRepository.Category(categoryId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ReturnResultWithClass<Model.EntityModels.Category>()
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Value = new Model.EntityModels.Category()
+                });
+
+            }
+        }
+        [HttpPost("")]
+        public IActionResult SaveCategory([FromBody]Model.EntityModels.Category category)
+        {
+            try
+            {
+                return Ok(categoryBLRepository.SaveCategory(category));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ReturnResultWithClass<Model.EntityModels.Category>()
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Value = new Model.EntityModels.Category()
+                });
+
+            }
+        }
+        [HttpPut("")]
+        public IActionResult UpdateCategory([FromBody]Model.EntityModels.Category category)
+        {
+            try
+            {
+                return Ok(categoryBLRepository.UpdateCategory(category));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ReturnResultWithClass<Model.EntityModels.Category>()
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Value = new Model.EntityModels.Category()
+                });
+
+            }
+        }
+        [HttpDelete("{categoryId}")]
+        public IActionResult DeleteCategory(int categoryId)
+        {
+            try
+            {
+                return Ok(categoryBLRepository.DeleteCategory(categoryId));
             }
             catch (Exception ex)
             {
